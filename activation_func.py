@@ -13,6 +13,11 @@ def relu(x):
 def identity_function(x):
     return x
 
+def softmax(x):
+    exp_x = np.exp(x - np.max(x)) # for overflow problem
+    sum_exp_x = np.sum(exp_x)
+    return exp_x / sum_exp_x
+
 def main():
     x = np.arange(-5.0, 5.0, 0.1)
     # y = step_function(x)
